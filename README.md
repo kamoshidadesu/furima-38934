@@ -55,8 +55,8 @@ Things you may want to cover:
 | condition_id   | integer       | null: false                    |
 | state_id       | integer       | null: false                    |
 | freight_id     | integer       | null: false                    |
+| shipdate_id    | integer       | null: false                    |
 | price          | integer       | null: false                    |
-| date_id        | integer       | null: false                    |
 | user           | references    | null: false, foreign_key :true |
 
 ### Association
