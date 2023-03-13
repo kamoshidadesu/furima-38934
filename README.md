@@ -51,11 +51,12 @@ Things you may want to cover:
 | -------------- | ------------- | ------------------------------ |
 | name           | string        | null: false                    |
 | description    | text          | null: false                    |
-| category       | string        | null: false                    |
-| condition      | string        | null: false                    |
-| state          | string        | null: false                    |
-| freight        | string        | null: false                    |
-| price          | integer       | null: false                    |
+| category_id    | string        | null: false                    |
+| condition_id   | string        | null: false                    |
+| state_id       | string        | null: false                    |
+| freight_id     | string        | null: false                    |
+| price_id       | integer       | null: false                    |
+| date_id        | integer       | null: false                    |
 | user           | references    | null: false, foreign_key :true |
 
 ### Association
