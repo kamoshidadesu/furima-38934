@@ -81,7 +81,7 @@ Things you may want to cover:
 
 | Column         | Type          | Option                         |
 | -------------- | ------------- | ------------------------------ |
-| zip            | integer       | null: false                    |
+| zip            | string        | null: false                    |
 | state          | string        | null: false                    |
 | city           | string        | null: false                    |
 | address        | string        | null: false                    |
