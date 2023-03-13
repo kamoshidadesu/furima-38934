@@ -86,7 +86,7 @@ Things you may want to cover:
 | city           | string        | null: false                    |
 | address        | string        | null: false                    |
 | building_name  | string        |                                |
-| phone          | integer       | null: false                    |
+| phone          | string        | null: false                    |
 | buy            | references    | null: false, foreign_key :true |
 
 
