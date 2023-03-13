@@ -51,10 +51,10 @@ Things you may want to cover:
 | -------------- | ------------- | ------------------------------ |
 | name           | string        | null: false                    |
 | description    | text          | null: false                    |
-| category_id    | string        | null: false                    |
-| condition_id   | string        | null: false                    |
-| state_id       | string        | null: false                    |
-| freight_id     | string        | null: false                    |
+| category_id    | integer       | null: false                    |
+| condition_id   | integer       | null: false                    |
+| state_id       | integer       | null: false                    |
+| freight_id     | integer       | null: false                    |
 | price_id       | integer       | null: false                    |
 | date_id        | integer       | null: false                    |
 | user           | references    | null: false, foreign_key :true |
@@ -83,7 +83,7 @@ Things you may want to cover:
 | Column         | Type          | Option                         |
 | -------------- | ------------- | ------------------------------ |
 | zip            | string        | null: false                    |
-| state          | string        | null: false                    |
+| state_id       | integer       | null: false                    |
 | city           | string        | null: false                    |
 | address        | string        | null: false                    |
 | building_name  | string        |                                |
