@@ -49,7 +49,6 @@ Things you may want to cover:
 
 | Column         | Type          | Option                         |
 | -------------- | ------------- | ------------------------------ |
-| image          | text          | null: false                    |
 | name           | string        | null: false                    |
 | description    | text          | null: false                    |
 | category       | string        | null: false                    |
