@@ -6,7 +6,7 @@ class User < ApplicationRecord
   
   # ユーザーの新規登録には、パスワードは確認用を含めて2回入力すること
   validates :password, 
-  format: {with: /\A[a-z0-9]+\z/},
+  format: {with: /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i},
   confirmation: true
   # ユーザーの新規登録には、ニックネーム、メールアドレス、
   validates :nickname,
