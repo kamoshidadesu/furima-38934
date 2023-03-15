@@ -5,15 +5,28 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   
   # ユーザーの新規登録には、パスワードは確認用を含めて2回入力すること
-  validates :password, confirmation: true
+  validates :password, 
+  format: {with: /\A[a-z0-9]+\z/},
+  confirmation: true
   # ユーザーの新規登録には、ニックネーム、メールアドレス、
-  validates :nickname, presence: true
-  validates :email, presence: true
-  validates :last_name, presence: true
-  validates :first_name, presence: true
-  validates :last_name_kana, presence: true
-  validates :first_name_kana, presence: true
-  validates :birth, presence: true
+  validates :nickname,
+    presence: true
+  validates :email,
+    presence: true
+  validates :last_name, 
+    presence: true,
+    format: {with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :first_name,
+    presence: true,
+    format: {with: /\A[ぁ-んァ-ン一-龥]/}
+  validates :last_name_kana,
+    presence: true,
+    format: {with: /\A[ァ-ヶー－]+\z/}
+  validates :first_name_kana,
+    presence: true,
+    format: {with: /\A[ァ-ヶー－]+\z/}
+  validates :birth,
+    presence: true
   has_many :items
   has_many :buys
 end
