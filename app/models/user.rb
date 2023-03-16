@@ -11,14 +11,12 @@ class User < ApplicationRecord
   # ユーザーの新規登録には、ニックネーム、メールアドレス、
   validates :nickname,
             presence: true
-  validates :email,
-            presence: true
   validates :last_name,
             presence: true,
-            format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+            format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
   validates :first_name,
             presence: true,
-            format: { with: /\A[ぁ-んァ-ン一-龥]/ }
+            format: { with: /\A[ぁ-んァ-ヶ一-龥々ー]+\z/ }
   validates :last_name_kana,
             presence: true,
             format: { with: /\A[ァ-ヶー－]+\z/ }
