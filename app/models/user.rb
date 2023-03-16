@@ -25,6 +25,6 @@ class User < ApplicationRecord
             format: { with: /\A[ァ-ヶー－]+\z/ }
   validates :birth,
             presence: true
-  has_many :items
-  has_many :buys
+  #has_many :items
+  #has_many :buys
 end
