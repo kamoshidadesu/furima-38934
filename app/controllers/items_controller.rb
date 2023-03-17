@@ -7,3 +7,9 @@ class ItemsController < ApplicationController
     @items = Items.new
   end
 end
+
+
+private
+
+def item_params
+  params.require(:item).permit(:content, :image, :category_id ).merge(user_id: current_user.id)
