@@ -12,6 +12,7 @@ class Item < ApplicationRecord
 
 
   #空の投稿を保存できないようにする
+  validates :image,presence: true
   validates :name, presence: true
   validates :description, presence: true
   validates :category_id, presence: true
@@ -27,4 +28,6 @@ class Item < ApplicationRecord
   validates :state_id, numericality: { other_than: 1, message: "can't be blank" } 
   validates :freight_id, numericality: { other_than: 1, message: "can't be blank" } 
   validates :shipdate_id, numericality: { other_than: 1, message: "can't be blank" } 
+
+  validates_inclusion_of :price, in:300..9999999, message: "is out of setting range"
 end
