@@ -8,6 +8,7 @@ class Item < ApplicationRecord
   belongs_to :condition
   belongs_to :state
   belongs_to :freight
+  belongs_to :shipdate
 
 
   #空の投稿を保存できないようにする
@@ -21,9 +22,9 @@ class Item < ApplicationRecord
   validates :price, presence: true
 
   #ジャンルの選択が「---」の時は保存できないようにする
-  validates :category_id, numericality: { other_than: 1 message: "can't be blank" } 
-  validates :condition_id, numericality: { other_than: 1 message: "can't be blank" } 
-  validates :state_id, numericality: { other_than: 1 message: "can't be blank" } 
-  validates :freight_id, numericality: { other_than: 1 message: "can't be blank" } 
-  validates :shipdate_id, numericality: { other_than: 1 message: "can't be blank" } 
+  validates :category_id, numericality: { other_than: 1, message: "can't be blank" } 
+  validates :condition_id, numericality: { other_than: 1, message: "can't be blank" } 
+  validates :state_id, numericality: { other_than: 1, message: "can't be blank" } 
+  validates :freight_id, numericality: { other_than: 1, message: "can't be blank" } 
+  validates :shipdate_id, numericality: { other_than: 1, message: "can't be blank" } 
 end
