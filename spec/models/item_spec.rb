@@ -5,12 +5,10 @@ RSpec.describe Item, type: :model do
     @item = FactoryBot.build(:item)
   end
 
-
-
-  describe'出品の保存' do
-    context'出品ができる場合' do
+  describe '出品の保存' do
+    context '出品ができる場合' do
       it '商品画像、商品名、商品の説明、カテゴリー、商品の状態、配送料の負担、発送元の地域、発送までの日数、販売価格が存在すれば出品できる' do
-      expect(@item).to be_valid
+        expect(@item).to be_valid
       end
     end
     context '出品ができない場合' do
@@ -49,7 +47,7 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Freight can't be blank")
       end
-      it '発送までの日数が空では出品できない'do
+      it '発送までの日数が空では出品できない' do
         @item.shipdate = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipdate can't be blank")
@@ -62,7 +60,7 @@ RSpec.describe Item, type: :model do
       it 'ユーザーが紐づいてないと出品できない' do
         @item.user = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include("User must exist")
+        expect(@item.errors.full_messages).to include('User must exist')
       end
     end
   end
