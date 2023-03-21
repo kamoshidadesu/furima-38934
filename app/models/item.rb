@@ -28,5 +28,5 @@ class Item < ApplicationRecord
   validates :freight_id, numericality: { other_than: 1, message: "can't be blank" }
   validates :shipdate_id, numericality: { other_than: 1, message: "can't be blank" }
 
-  validates_inclusion_of :price, in: 300..9_999_999, numericality: {only_integer: true},message: 'is out of setting range'
+  validates_inclusion_of :price, in: 300..9_999_999, numericality: { only_integer: true }, message: 'is out of setting range'
 end
