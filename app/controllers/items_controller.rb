@@ -26,13 +26,18 @@ before_action :authenticate_user!, except: [:index, :show ]
     @item = Item.find(params[:id])
     if current_user.id == @item.user_id 
     else
-      redirect_to root_path 
+        redirect_to root_path
     end
   end
 
   def update
     item = Item.find(params[:id])
     item.update(item_params)
+    if redirect_to item_path(item.id), method: :get 
+    else
+      render edit
+    end 
+
   end
 
   private
