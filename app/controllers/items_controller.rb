@@ -31,11 +31,12 @@ before_action :authenticate_user!, except: [:index, :show ]
   end
 
   def update
-    item = Item.find(params[:id])
-    item.update(item_params)
-    if redirect_to item_path(item.id), method: :get 
+    @item = Item.find(params[:id])
+    @item.update(item_params)
+    if @item.valid?
+      redirect_to item_path(@item.id), method: :get 
     else
-      render edit
+      render :edit
     end 
 
   end
