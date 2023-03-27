@@ -89,7 +89,7 @@ Things you may want to cover:
 | address        | string        | null: false                    |
 | building_name  | string        |                                |
 | phone          | string        | null: false                    |
-| buy            | references    | null: false, foreign_key :true |
+| order          | references    | null: false, foreign_key :true |
 
 
 ### Association
