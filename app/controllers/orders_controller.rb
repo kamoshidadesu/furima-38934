@@ -1,21 +1,24 @@
 class OrdersController < ApplicationController
   def index
+    @item = Item.all
   end
 
   def new
+    @order_shippings = OrderShippings.new
   end
 
   def create
-    @order = Order.create(order_params)
-    Shipping.create(shipping_params)
+    @Order_shippings = OrderShippings.new(order_params)
+      if @order_shippings.valid?
+        @order_shippings.save
+        redirect_to root_path
+      else
+        render root_path
   end
+end
 
   private
   def order_params
-    params.permit(:item_id, :user_id).merge(user_id: current_user.id )
-  end
-
-  def shipping_params
-    params.permit(:zip, :state_id, :city, :address, :building_name, :phone).merge(order_id: @order.id)
+    params.require(:order_shippings). permit(:zip, :state_id, :city, :address, :building_name, :phone).merge(user_id: current_user.id )
   end
 end
