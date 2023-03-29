@@ -37,12 +37,12 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Condition can't be blank")
       end
-      it '配送料の負担が---では出品できない' do
+      it '発送元の地域が---では出品できない' do
         @item.state_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("State can't be blank")
       end
-      it '発送元の地域が---では出品できない' do
+      it '配送料の負担---では出品できない' do
         @item.freight_id = 1
         @item.valid?
         expect(@item.errors.full_messages).to include("Freight can't be blank")
