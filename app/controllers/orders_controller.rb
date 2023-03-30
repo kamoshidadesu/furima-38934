@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    if current_user.id == @item.user_id
+    if current_user.id == @item.user_id || @item.order
       redirect_to root_path
     else
       @order_shipping = OrderShipping.new
