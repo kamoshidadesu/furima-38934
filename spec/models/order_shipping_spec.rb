@@ -54,7 +54,7 @@ RSpec.describe OrderShipping, type: :model do
       it '郵便番号が半角の3桁ハイフン4桁でないと購入できない' do
         @order_shipping.zip = '123-45-678'
         @order_shipping.valid?
-        expect(@order_shipping.errors.full_messages).to include("Zip is invalid")
+        expect(@order_shipping.errors.full_messages).to include("Zip is invalid. Enter it as follows (e.g. 123-4567)")
       end
       it '電話番号が9桁以下であると購入できない' do
         @order_shipping.phone = '123456789'
